@@ -34,10 +34,6 @@ export default function Page() {
   return (
     <div className="container">
       <div className="container__head">
-        <p className="message">
-          URLから <b>params ( gender )</b> を取得。Toggleボタンで
-          <b>&quot;male&quot;, &quot;female&quot;</b> 切り替え
-        </p>
         <button onClick={hanldeToggleParams}>Toggle</button>
       </div>
       <Result />

@@ -181,14 +181,6 @@ header p {
   margin-left: auto;
   cursor: pointer;
 }
-.message {
-  font-size: 12px;
-  color: #666;
-}
-.message:not(.container__head .message) {
-  text-align: right;
-  margin-bottom: 16px;
-}
 .formControll {
   padding-block: 12px;
 }

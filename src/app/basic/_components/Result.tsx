@@ -28,7 +28,7 @@ export function Result({ isShow }: Props) {
           <span>Result</span>
           <div className="contentInner result">
             <p>
-              <b>{`${firstName} ${lastName}`}</b>さんは
+              <b>{`${firstName} ${lastName}`.toUpperCase()}</b>さんは
               {<b>{dayjs(birthday).format("YYYY年M月D日")}</b>}生まれです。
             </p>
             <p>

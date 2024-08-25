@@ -9,9 +9,6 @@ export default function Page() {
 
   return (
     <div className="container">
-      <p className="message">
-        <b>コンポーネント側</b> で Atom を編集する場合
-      </p>
       <Form onSubmit={setShowResult} />
       <Result isShow={showResult} />
       <Original />

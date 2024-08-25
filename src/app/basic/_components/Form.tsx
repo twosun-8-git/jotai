@@ -26,9 +26,7 @@ export function Form({ onSubmit }: Props) {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     onSubmit(true);
-    if (birthday) {
-      setCurrentAge(dayjs().diff(birthday, "year"));
-    }
+    setCurrentAge(dayjs().diff(birthday, "year"));
   };
 
   /** フォームリセット */
@@ -36,6 +34,7 @@ export function Form({ onSubmit }: Props) {
     setFirstName("");
     setLastName("");
     setBirthday(null);
+    setCurrentAge(null);
     onSubmit(false);
   };
 
