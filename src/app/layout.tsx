@@ -17,18 +17,16 @@ export default function RootLayout({
       <body>
         <div className="wrapper">
           <header>
-            <div>
-              <h1>
-                <Link href="/">My Jotai</Link>
-              </h1>
-              <p>
-                状態管理ライブラリ&nbsp;
-                <a href="https://jotai.org/" target="_blank">
-                  &quot;Jotai&quot;
-                </a>
-                &nbsp;のサンプルです。
-              </p>
-            </div>
+            <h1>
+              <Link href="/">My Jotai</Link>
+            </h1>
+            <p>
+              状態管理ライブラリ&nbsp;
+              <a href="https://jotai.org/" target="_blank">
+                &quot;Jotai&quot;
+              </a>
+              &nbsp;のサンプルです。
+            </p>
           </header>
           {children}
         </div>

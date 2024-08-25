@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { atom, useAtom, useAtomValue, useSetAtom } from "jotai";
 import { useResetAtom, RESET } from "jotai/utils"; // リセット用。RESETはシンボル
 
@@ -24,11 +25,16 @@ export function Form({ onSubmit }: Props) {
 
   const setCurrentAge = useSetAtom(setCurrentAgeAtom);
 
+  /** 年齢を計算 */
+  useEffect(() => {
+    if (!birthday) return;
+    setCurrentAge();
+  }, [birthday]);
+
   /** フォーム送信 */
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     onSubmit(true);
-    setCurrentAge();
   };
 
   /** フォームリセット */

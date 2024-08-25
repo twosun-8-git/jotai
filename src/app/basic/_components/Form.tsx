@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useAtom, useSetAtom } from "jotai";
 import dayjs from "dayjs";
 import "dayjs/locale/ja";
@@ -22,11 +23,16 @@ export function Form({ onSubmit }: Props) {
 
   const setCurrentAge = useSetAtom(currentAgeAtom);
 
+  /** 年齢を計算 */
+  useEffect(() => {
+    if (!birthday) return;
+    setCurrentAge(dayjs().diff(birthday, "year"));
+  }, [birthday]);
+
   /** フォーム送信 */
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     onSubmit(true);
-    setCurrentAge(dayjs().diff(birthday, "year"));
   };
 
   /** フォームリセット */
