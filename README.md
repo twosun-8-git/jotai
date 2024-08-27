@@ -1,7 +1,7 @@
-# How to use react-hook-form
+# How to use Jotai
 
-このリポジトリは Zenn の記事 **[👻 状態管理ライブラリ Jotai の使い方](https://zenn.dev/cocomina/articles/how-to-use-jotai)
-** と連動したリポジトリです。
+このリポジトリは Zenn の記事 **[「👻 状態管理ライブラリ Jotai の使い方」](https://zenn.dev/cocomina/articles/how-to-use-jotai)**
+と連動したリポジトリです。
 
 ## 🛠️ 開発環境
 
