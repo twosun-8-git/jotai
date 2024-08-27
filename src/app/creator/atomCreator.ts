@@ -3,12 +3,22 @@ import dayjs from "dayjs";
 import "dayjs/locale/ja";
 import "dayjs/locale/en";
 
-/** Atom Creator */
-export const createDateAtom = (initialValue: Date | null) => {
-  // この関数内でベースになるatom
+export const createCounterAtom = (initialValue: number) => {
+  // 関数内でベースとなる Atom
   const baseAtom = atom(initialValue);
 
-  // Write Read Atom
+  // Read Write Atom
+  const incAtom = atom(
+    (get) => get(baseAtom),
+    (_, set, newValue: number) => set(baseAtom, newValue + 1)
+  );
+  return incAtom;
+};
+
+export const createDateAtom = (initialValue: Date | null) => {
+  const baseAtom = atom(initialValue);
+
+  // Read Write Atom
   const dateAtom = atom(
     (get) => {
       return get(baseAtom) ? dayjs(get(baseAtom)).format("YYYY-MM-DD") : "";
@@ -19,14 +29,14 @@ export const createDateAtom = (initialValue: Date | null) => {
     }
   );
 
-  // Read only Atom
+  // Read Only Atom
   const formatJpAtom = atom((get) => {
     return get(baseAtom)
       ? dayjs(get(baseAtom)).locale("ja").format("YYYY年M月D日")
       : "";
   });
 
-  // Read only Atom
+  // Read Only Atom
   const formatEnAtom = atom((get) => {
     return get(baseAtom)
       ? dayjs(get(baseAtom)).locale("en").format("MMMM D, YYYY")

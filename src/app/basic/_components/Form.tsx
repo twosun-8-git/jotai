@@ -23,19 +23,19 @@ export function Form({ onSubmit }: Props) {
 
   const setCurrentAge = useSetAtom(currentAgeAtom);
 
-  /** 年齢を計算 */
+  // 年齢を計算
   useEffect(() => {
     if (!birthday) return;
     setCurrentAge(dayjs().diff(birthday, "year"));
   }, [birthday]);
 
-  /** フォーム送信 */
+  // フォーム送信
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     onSubmit(true);
   };
 
-  /** フォームリセット */
+  // フォームリセット
   const handleReset = () => {
     setFirstName("");
     setLastName("");

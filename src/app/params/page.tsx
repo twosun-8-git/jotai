@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { useAtom } from "jotai";
 
 import { locationAtom, paramsAtom } from "./atom";
-import { MALE, FEMALE } from "./contants";
+import { MALE, FEMALE } from "./constants";
 
 import { Result, Params } from "./_components";
 

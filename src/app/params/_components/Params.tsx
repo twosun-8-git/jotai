@@ -1,7 +1,7 @@
 import { useAtomValue } from "jotai";
 
 import { paramsAtom } from "../atom";
-import { MALE, FEMALE } from "../contants";
+import { MALE, FEMALE } from "../constants";
 
 export function Params() {
   const params = useAtomValue(paramsAtom);

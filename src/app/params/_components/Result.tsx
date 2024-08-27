@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useAtomValue } from "jotai";
 
 import { paramsAtom, peopleAtom, Person } from "../atom";
-import { MALE, FEMALE } from "../contants";
+import { MALE, FEMALE } from "../constants";
 
 export function Result() {
   const [showResult, setShowResult] = useState(false);
